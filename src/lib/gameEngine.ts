@@ -71,7 +71,7 @@ export const INITIAL_STATE: GameState = {
   lastMessage: '',
 };
 
-export const MAX_QUARTERS = 24;
+export const MAX_QUARTERS = 16;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
@@ -253,7 +253,7 @@ export const getStatusMessage = (
     case 'won':
       return {
         title: '🎓 You Graduated!',
-        desc: 'You made it through all 24 quarters. Now let\'s see what kind of student you were...',
+        desc: 'You made it through all 16 quarters. Now let\'s see what kind of student you were...',
       };
     case 'academic_disaster':
       return {

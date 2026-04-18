@@ -73,7 +73,7 @@ const Game = () => {
         <div className="container mx-auto px-8 py-16 flex-1 max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">The Career Discovery Game</h1>
           <p className="text-xl text-muted-foreground mb-8">
-            Survive 24 quarters of school. Your choices reveal who you really are — and which careers fit you best.
+            Survive 16 quarters of school. Your choices reveal who you really are — and which careers fit you best.
           </p>
 
           <div className="bg-card rounded-xl p-8 shadow-md border border-border mb-8 space-y-6">
@@ -87,7 +87,7 @@ const Game = () => {
             <div>
               <h2 className="text-2xl font-bold text-primary mb-2">Win Conditions</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Survive all 24 quarters without your GPA hitting 0, your social life vanishing, your stress maxing out, or your energy crashing to zero.
+                Survive all 16 quarters without your GPA hitting 0, your social life vanishing, your stress maxing out, or your energy crashing to zero.
               </p>
             </div>
             <div>
