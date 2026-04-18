@@ -71,7 +71,7 @@ export const INITIAL_STATE: GameState = {
   lastMessage: '',
 };
 
-export const MAX_QUARTERS = 24;
+export const MAX_QUARTERS = 16;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
