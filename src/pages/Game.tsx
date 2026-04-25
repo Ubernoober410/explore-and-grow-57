@@ -8,6 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import {
   ActionType,
+  CONSECUTIVE_LIMIT,
   GameState,
   INITIAL_STATE,
   MAX_QUARTERS,
@@ -15,6 +16,7 @@ import {
   getStatusMessage,
   performAction,
 } from "@/lib/gameEngine";
+import AvatarHill from "@/components/AvatarHill";
 
 type Screen = "intro" | "playing" | "result";
 
@@ -180,6 +182,10 @@ const Game = () => {
           <Button variant="ghost" onClick={reset}>Quit</Button>
         </div>
 
+        <div className="mb-6">
+          <AvatarHill quarter={state.quarter} maxQuarters={MAX_QUARTERS} counts={state.actionCounts} />
+        </div>
+
         <Card className="p-6 mb-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           <Stat label="GPA" value={state.gpa} max={4} tone="" />
           <Stat label="Social" value={state.social} tone="" />
@@ -194,18 +200,27 @@ const Game = () => {
         )}
 
         <h2 className="text-xl font-bold text-primary mb-3">What do you do this quarter?</h2>
+        <p className="text-xs text-muted-foreground mb-3">
+          Tip: each action can only be picked {CONSECUTIVE_LIMIT} times in a row. Mix it up!
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {ACTIONS.map((a) => (
-            <button
-              key={a.id}
-              onClick={() => handleAction(a.id)}
-              className="text-left p-4 bg-card border border-border rounded-lg hover:border-accent hover:shadow-md hover:-translate-y-0.5 transition-all"
-            >
-              <div className="text-2xl mb-1">{a.emoji}</div>
-              <div className="font-semibold text-foreground">{a.label}</div>
-              <div className="text-xs text-muted-foreground mt-1">{a.desc}</div>
-            </button>
-          ))}
+          {ACTIONS.map((a) => {
+            const blocked = state.lastAction === a.id && state.consecutiveCount >= CONSECUTIVE_LIMIT;
+            return (
+              <button
+                key={a.id}
+                onClick={() => !blocked && handleAction(a.id)}
+                disabled={blocked}
+                className="text-left p-4 bg-card border border-border rounded-lg hover:border-accent hover:shadow-md hover:-translate-y-0.5 transition-all disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:border-border disabled:hover:shadow-none"
+              >
+                <div className="text-2xl mb-1">{a.emoji}</div>
+                <div className="font-semibold text-foreground">{a.label}</div>
+                <div className="text-xs text-muted-foreground mt-1">
+                  {blocked ? `Maxed out — pick something else` : a.desc}
+                </div>
+              </button>
+            );
+          })}
         </div>
       </div>
       <Footer />
