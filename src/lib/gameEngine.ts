@@ -45,7 +45,11 @@ export interface GameState {
   status: GameStatus;
   actionCounts: ActionCounts;
   lastMessage: string;
+  lastAction: ActionType | null;
+  consecutiveCount: number;
 }
+
+export const CONSECUTIVE_LIMIT = 3;
 
 export const INITIAL_STATE: GameState = {
   gpa: 3.0,
@@ -69,6 +73,8 @@ export const INITIAL_STATE: GameState = {
     game: 0,
   },
   lastMessage: '',
+  lastAction: null,
+  consecutiveCount: 0,
 };
 
 export const MAX_QUARTERS = 16;
