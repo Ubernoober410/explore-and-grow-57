@@ -249,6 +249,8 @@ export const performAction = (state: GameState, action: ActionType): GameState =
     status,
     actionCounts: newCounts,
     lastMessage: message,
+    lastAction: action,
+    consecutiveCount: state.lastAction === action ? state.consecutiveCount + 1 : 1,
   };
 };
 
