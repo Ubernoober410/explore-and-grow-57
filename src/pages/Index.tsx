@@ -88,7 +88,7 @@ const Index = () => {
               { num: "03", title: "Career Exploration", desc: "Access curated resources on salaries, locations, industry examples, and real stories from professionals already in the field." },
             ].map((item) => (
               <div key={item.num} className="bg-card rounded-xl p-8 shadow-md border border-border hover:shadow-xl transition-shadow">
-                <div className="text-5xl font-bold text-accent/20 mb-4">{item.num}</div>
+                <div className="text-5xl font-bold text-primary mb-4">{item.num}</div>
                 <h3 className="text-2xl font-bold text-primary mb-3">{item.title}</h3>
                 <p className="text-muted-foreground">{item.desc}</p>
               </div>
