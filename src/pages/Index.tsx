@@ -121,8 +121,10 @@ const Index = () => {
       <section className="py-24 bg-secondary/50">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Alumni Success Stories</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground mb-4">Outcomes</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-5">Alumni Success Stories</h2>
+            <div className="mx-auto w-16 h-px bg-primary/40 mb-6" aria-hidden />
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               See how Emerging Lux has empowered participants to achieve remarkable career milestones.
             </p>
           </div>
@@ -132,10 +134,10 @@ const Index = () => {
               { quote: "The connections I made through Emerging Lux led directly to my role in sustainable energy solutions.", name: "Kaelen Reyes", role: "Renewable Energy Lead, Solara Corp" },
               { quote: "Discovering the biotech track here opened doors I never knew existed. Truly life-changing.", name: "Maya Chen", role: "Biotech Innovator, Geneesis Labs" },
             ].map((story) => (
-              <div key={story.name} className="bg-card rounded-xl p-6 shadow-lg border border-border">
-                <p className="font-serif text-lg italic text-muted-foreground mb-4">"{story.quote}"</p>
-                <p className="font-bold text-primary">{story.name}</p>
-                <p className="text-sm text-muted-foreground">{story.role}</p>
+              <div key={story.name} className="bg-card rounded-sm p-8 shadow-sm border border-border border-l-2 border-l-primary">
+                <p className="font-display text-lg italic text-muted-foreground mb-5 leading-relaxed">"{story.quote}"</p>
+                <p className="font-semibold text-primary">{story.name}</p>
+                <p className="text-xs uppercase tracking-[0.14em] text-muted-foreground mt-1">{story.role}</p>
               </div>
             ))}
           </div>
@@ -143,17 +145,18 @@ const Index = () => {
       </section>
 
       {/* Quick Links CTA */}
-      <section className="py-16 bg-background">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-8 text-center">
-          <h2 className="text-3xl font-bold text-primary mb-8">Ready to Get Started?</h2>
+          <h2 className="font-display text-3xl font-bold text-primary mb-3">Ready to Get Started?</h2>
+          <div className="mx-auto w-16 h-px bg-primary/40 mb-8" aria-hidden />
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-sm text-sm font-semibold uppercase tracking-[0.14em] px-8">
               <Link to="/exploration">Explore Resources</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="rounded-sm text-sm font-semibold uppercase tracking-[0.14em] px-8 border-primary/40 text-primary">
               <Link to="/careers">Browse Careers</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="rounded-sm text-sm font-semibold uppercase tracking-[0.14em] px-8 border-primary/40 text-primary">
               <Link to="/events">Event Calendar</Link>
             </Button>
           </div>
