@@ -86,26 +86,36 @@ const Index = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">About Emerging Lux</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground mb-4">The Institute</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-5">About Emerging Lux</h2>
+            <div className="mx-auto w-16 h-px bg-primary/40 mb-6" aria-hidden />
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               We bridge the gap between academic learning and the dynamic, forward-thinking industries shaping tomorrow. Through interactive tools, mentorship, and community, we help you discover who you want to become.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 border-t border-border pt-12">
             {[
               { num: "01", title: "Self-Discovery Game", desc: "Take our interactive personality-driven game to uncover career paths tailored to your unique strengths and interests." },
               { num: "02", title: "Community & Discussion", desc: "Join industry-specific channels to connect with peers, mentors, and professionals across finance, tech, agriculture, and more." },
               { num: "03", title: "Career Exploration", desc: "Access curated resources on salaries, locations, industry examples, and real stories from professionals already in the field." },
             ].map((item) => (
-              <div key={item.num} className="bg-card rounded-xl p-8 shadow-md border border-border hover:shadow-xl transition-shadow">
-                <div className="text-5xl font-bold text-primary mb-4">{item.num}</div>
-                <h3 className="text-2xl font-bold text-primary mb-3">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
+              <div key={item.num} className="bg-card rounded-sm p-8 shadow-sm border border-border border-t-2 border-t-primary hover:shadow-lg transition-shadow">
+                <div className="font-display text-5xl font-bold text-primary mb-4">{item.num}</div>
+                <h3 className="font-display text-2xl font-bold text-primary mb-3">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <div className="container mx-auto px-8">
+        <div className="flex items-center gap-4">
+          <div className="h-px flex-1 bg-border" />
+          <span className="text-primary/50 text-xs tracking-[0.4em] uppercase">❖</span>
+          <div className="h-px flex-1 bg-border" />
+        </div>
+      </div>
 
       {/* Achievements / Success Stories */}
       <section className="py-24 bg-secondary/50">
