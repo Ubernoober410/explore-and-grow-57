@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Public Sans', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
+        display: ['Playfair Display', 'Garamond', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

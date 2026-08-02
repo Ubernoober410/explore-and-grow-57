@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Public+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&family=Public+Sans:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -48,6 +48,7 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     --font-serif: 'Merriweather', serif;
+    --font-display: 'Playfair Display', 'Garamond', serif;
     --font-sans: 'Public Sans', sans-serif;
   }
 
@@ -93,6 +94,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
   }
 }
