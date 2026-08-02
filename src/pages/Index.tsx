@@ -52,7 +52,7 @@ const Index = () => {
             <div className="relative">
               <div className="absolute -inset-3 border border-primary/25 rounded-sm" aria-hidden />
               <div className="relative aspect-square rounded-sm overflow-hidden shadow-xl border border-primary/20 ring-8 ring-card">
-                <img src={heroCampus} alt="Student standing at a crossroads of career paths" className="w-full h-full object-cover" width={1280} height={1280} />
+                <img src={heroGraduation.url} alt="University graduates celebrating with caps thrown in the air" className="w-full h-full object-cover" width={1280} height={1280} />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-card rounded-sm shadow-lg border border-primary/25 px-4 py-3 flex items-center gap-3">
                 <span className="text-2xl">⚡</span>
