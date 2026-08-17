@@ -49,7 +49,7 @@ const Index = () => {
 
           <div className="md:col-span-5">
             <div className="relative">
-              <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-xl ring-8 ring-card/70">
+              <div className="relative aspect-square overflow-hidden shadow-xl ring-8 ring-card/70" style={{ borderRadius: "48% 52% 46% 54% / 54% 46% 52% 48%" }}>
                 <img src={heroGraduation.url} alt="University graduates celebrating with caps thrown in the air" className="w-full h-full object-cover" width={1280} height={1280} />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-card rounded-2xl shadow-lg px-5 py-3 flex items-center gap-3">
