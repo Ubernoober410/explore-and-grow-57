@@ -111,13 +111,17 @@ const Index = () => {
               See how Emerging Lux has empowered participants to achieve remarkable career milestones.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             {[
               { quote: "Emerging Lux was instrumental in my journey to becoming a lead AI researcher at NovaTech.", name: "Dr. Elara Vance", role: "Quantum AI, NovaTech" },
               { quote: "The connections I made through Emerging Lux led directly to my role in sustainable energy solutions.", name: "Kaelen Reyes", role: "Renewable Energy Lead, Solara Corp" },
               { quote: "Discovering the biotech track here opened doors I never knew existed. Truly life-changing.", name: "Maya Chen", role: "Biotech Innovator, Geneesis Labs" },
-            ].map((story) => (
-              <div key={story.name} className="bg-card rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            ].map((story, i) => (
+              <div
+                key={story.name}
+                className="relative bg-card p-10 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ borderRadius: i % 2 === 0 ? "54% 46% 58% 42% / 44% 56% 44% 56%" : "46% 54% 42% 58% / 56% 44% 56% 44%" }}
+              >
                 <p className="font-display text-lg text-muted-foreground mb-6 leading-relaxed">“{story.quote}”</p>
                 <p className="font-semibold text-primary">{story.name}</p>
                 <p className="text-sm text-muted-foreground mt-1">{story.role}</p>
