@@ -26,20 +26,30 @@ const TikTokIcon = () => (
 
 const Footer = () => {
   return (
-    <footer className="bg-primary py-12">
-      <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-start gap-8">
-        <div>
-          <p className="text-lg font-serif font-bold text-primary-foreground mb-2">Emerging Lux</p>
+    <footer className="bg-primary py-14 rounded-t-[2.5rem]">
+      <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-start gap-10">
+        <div className="max-w-sm">
+          <p className="text-lg font-display font-bold text-primary-foreground mb-2">Emerging Lux</p>
           <p className="text-primary-foreground/70">&copy; {new Date().getFullYear()} Emerging Lux. All rights reserved.</p>
         </div>
-        <div className="flex flex-col gap-1">
-          <h4 className="font-semibold text-primary-foreground mb-2">Quick Links</h4>
-          <Link to="/exploration" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Exploration</Link>
-          <Link to="/careers" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Careers</Link>
-          <Link to="/game" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">Game</Link>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { to: "/exploration", label: "Exploration" },
+            { to: "/careers", label: "Careers" },
+            { to: "/game", label: "Game" },
+          ].map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className="rounded-full bg-primary-foreground/10 px-4 py-2 text-sm text-primary-foreground/85 hover:bg-primary-foreground/20 transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
-        <div className="flex flex-col gap-1">
-          <h4 className="font-semibold text-primary-foreground mb-2">Contact</h4>
+        <div className="flex flex-col gap-2">
+          <h4 className="font-semibold text-primary-foreground mb-1">Contact</h4>
+
           <a
             href="mailto:emerginglux@gmail.com"
             className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
