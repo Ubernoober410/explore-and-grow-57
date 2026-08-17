@@ -34,7 +34,7 @@
     --input: 200 40% 90%;
     --ring: 210 75% 45%;
 
-    --radius: 0.5rem;
+    --radius: 1.25rem;
 
     --hero-gradient: linear-gradient(135deg, hsl(200 80% 90%), hsl(50 95% 88%));
 
