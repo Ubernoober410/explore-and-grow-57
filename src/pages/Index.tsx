@@ -81,14 +81,18 @@ const Index = () => {
               We bridge the gap between academic learning and the dynamic, forward-thinking industries shaping tomorrow. Through interactive tools, mentorship, and community, we help you discover who you want to become.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             {[
               { num: "01", title: "Self-Discovery Game", desc: "Take our interactive personality-driven game to uncover career paths tailored to your unique strengths and interests." },
               { num: "02", title: "Community & Discussion", desc: "Join industry-specific channels to connect with peers, mentors, and professionals across finance, tech, agriculture, and more." },
               { num: "03", title: "Career Exploration", desc: "Access curated resources on salaries, locations, industry examples, and real stories from professionals already in the field." },
-            ].map((item) => (
-              <div key={item.num} className="bg-card rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center font-display text-lg font-bold text-primary mb-5">{item.num}</div>
+            ].map((item, i) => (
+              <div
+                key={item.num}
+                className="relative bg-card p-10 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ borderRadius: i % 2 === 0 ? "46% 54% 42% 58% / 56% 44% 56% 44%" : "54% 46% 58% 42% / 44% 56% 44% 56%" }}
+              >
+                <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center font-display text-lg font-bold text-primary mb-5">{item.num}</div>
                 <h3 className="font-display text-2xl font-bold text-primary mb-3">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
