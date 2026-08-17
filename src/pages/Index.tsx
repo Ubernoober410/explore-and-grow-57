@@ -49,7 +49,7 @@ const Index = () => {
 
           <div className="md:col-span-5">
             <div className="relative">
-              <div className="relative aspect-square rounded-[2rem] overflow-hidden shadow-xl ring-8 ring-card/70">
+              <div className="relative aspect-square overflow-hidden shadow-xl ring-8 ring-card/70" style={{ borderRadius: "48% 52% 46% 54% / 54% 46% 52% 48%" }}>
                 <img src={heroGraduation.url} alt="University graduates celebrating with caps thrown in the air" className="w-full h-full object-cover" width={1280} height={1280} />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-card rounded-2xl shadow-lg px-5 py-3 flex items-center gap-3">
@@ -81,14 +81,18 @@ const Index = () => {
               We bridge the gap between academic learning and the dynamic, forward-thinking industries shaping tomorrow. Through interactive tools, mentorship, and community, we help you discover who you want to become.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             {[
               { num: "01", title: "Self-Discovery Game", desc: "Take our interactive personality-driven game to uncover career paths tailored to your unique strengths and interests." },
               { num: "02", title: "Community & Discussion", desc: "Join industry-specific channels to connect with peers, mentors, and professionals across finance, tech, agriculture, and more." },
               { num: "03", title: "Career Exploration", desc: "Access curated resources on salaries, locations, industry examples, and real stories from professionals already in the field." },
-            ].map((item) => (
-              <div key={item.num} className="bg-card rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center font-display text-lg font-bold text-primary mb-5">{item.num}</div>
+            ].map((item, i) => (
+              <div
+                key={item.num}
+                className="relative bg-card p-10 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ borderRadius: i % 2 === 0 ? "46% 54% 42% 58% / 56% 44% 56% 44%" : "54% 46% 58% 42% / 44% 56% 44% 56%" }}
+              >
+                <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center font-display text-lg font-bold text-primary mb-5">{item.num}</div>
                 <h3 className="font-display text-2xl font-bold text-primary mb-3">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
@@ -107,13 +111,17 @@ const Index = () => {
               See how Emerging Lux has empowered participants to achieve remarkable career milestones.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
             {[
               { quote: "Emerging Lux was instrumental in my journey to becoming a lead AI researcher at NovaTech.", name: "Dr. Elara Vance", role: "Quantum AI, NovaTech" },
               { quote: "The connections I made through Emerging Lux led directly to my role in sustainable energy solutions.", name: "Kaelen Reyes", role: "Renewable Energy Lead, Solara Corp" },
               { quote: "Discovering the biotech track here opened doors I never knew existed. Truly life-changing.", name: "Maya Chen", role: "Biotech Innovator, Geneesis Labs" },
-            ].map((story) => (
-              <div key={story.name} className="bg-card rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+            ].map((story, i) => (
+              <div
+                key={story.name}
+                className="relative bg-card p-10 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                style={{ borderRadius: i % 2 === 0 ? "54% 46% 58% 42% / 44% 56% 44% 56%" : "46% 54% 42% 58% / 56% 44% 56% 44%" }}
+              >
                 <p className="font-display text-lg text-muted-foreground mb-6 leading-relaxed">“{story.quote}”</p>
                 <p className="font-semibold text-primary">{story.name}</p>
                 <p className="text-sm text-muted-foreground mt-1">{story.role}</p>
@@ -126,7 +134,7 @@ const Index = () => {
       {/* Quick Links CTA */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-8">
-          <div className="rounded-[2rem] bg-muted/60 px-8 py-14 text-center">
+          <div className="bg-muted/60 px-10 py-16 text-center" style={{ borderRadius: "44% 56% 46% 54% / 54% 46% 56% 44%" }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mb-8">Ready to get started?</h2>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-base font-semibold px-8 shadow-md">
