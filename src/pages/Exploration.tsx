@@ -22,7 +22,7 @@ const Exploration = () => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resources.map((r) => (
-            <Link key={r.title} to={r.link} className="bg-card rounded-xl p-6 shadow-md border border-border hover:shadow-xl transition-shadow group">
+            <Link key={r.title} to={r.link} className="bg-card rounded-3xl p-7 shadow-sm hover:shadow-xl transition-shadow group">
               <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors">{r.title}</h3>
               <p className="text-muted-foreground">{r.desc}</p>
             </Link>

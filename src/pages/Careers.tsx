@@ -17,7 +17,7 @@ const Careers = () => {
             <Link
               key={career.name}
               to={`/careers/${slugify(career.name)}`}
-              className="bg-card rounded-lg p-5 border border-border hover:shadow-lg hover:border-accent/30 transition-all group"
+              className="bg-card rounded-3xl p-6 hover:shadow-lg transition-all group"
             >
               <h3 className="font-bold text-primary group-hover:text-accent transition-colors">{career.name}</h3>
               <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{career.description}</p>

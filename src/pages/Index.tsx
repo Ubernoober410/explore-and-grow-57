@@ -30,10 +30,10 @@ const Index = () => {
               Take a quick, fun personality quiz and discover careers that actually match your interests, strengths, and vibe. No boring questionnaires — just you, figuring you out.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-md text-base font-semibold px-8 h-13 rounded-full">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-md text-base font-semibold px-8 h-12 rounded-full">
                 <Link to="/game">Take the Quiz →</Link>
               </Button>
-              <Button asChild variant="ghost" size="lg" className="text-base font-semibold px-8 h-13 rounded-full bg-card/70 backdrop-blur text-primary hover:bg-card">
+              <Button asChild variant="ghost" size="lg" className="text-base font-semibold px-8 h-12 rounded-full bg-card/70 backdrop-blur text-primary hover:bg-card">
                 <Link to="/careers">Browse Careers</Link>
               </Button>
             </div>
