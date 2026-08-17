@@ -134,7 +134,7 @@ const Index = () => {
       {/* Quick Links CTA */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-8">
-          <div className="rounded-[2rem] bg-muted/60 px-8 py-14 text-center">
+          <div className="bg-muted/60 px-10 py-16 text-center" style={{ borderRadius: "44% 56% 46% 54% / 54% 46% 56% 44%" }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mb-8">Ready to get started?</h2>
             <div className="flex flex-wrap justify-center gap-3">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-base font-semibold px-8 shadow-md">
