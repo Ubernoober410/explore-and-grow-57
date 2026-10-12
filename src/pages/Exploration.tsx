@@ -1,21 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import TikTokEmbed from "@/components/TikTokEmbed";
+import TikTokCard from "@/components/TikTokCard";
+import { TIKTOK_VIDEOS } from "@/lib/tiktokVideos";
 
-const TIKTOK_VIDEOS = [
-  "https://www.tiktok.com/@emerging.lux/video/7694553170084777229",
-  "https://www.tiktok.com/@emerging.lux/video/7694182278523587853",
-  "https://www.tiktok.com/@emerging.lux/video/7688572832254643469",
-  "https://www.tiktok.com/@emerging.lux/video/7685997653578026254",
-  "https://www.tiktok.com/@emerging.lux/video/7681117210537987341",
-  "https://www.tiktok.com/@emerging.lux/video/7681106612588727566",
-  "https://www.tiktok.com/@emerging.lux/video/7681106178641792269",
-  "https://www.tiktok.com/@emerging.lux/video/7681105977889885453",
-  "https://www.tiktok.com/@emerging.lux/video/7681079810549927181",
-];
-
-const videoIdFromUrl = (url: string) => url.split("/video/")[1] ?? url;
 
 const Exploration = () => {
   const resources = [
@@ -48,14 +36,13 @@ const Exploration = () => {
           <p className="text-lg text-muted-foreground mb-10 max-w-3xl">
             Short clips from our TikTok channel covering career paths, tips, and real-world insights.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {TIKTOK_VIDEOS.map((url) => (
-              <div key={url} className="bg-card rounded-3xl p-4 shadow-sm overflow-hidden">
-                <TikTokEmbed videoUrl={url} videoId={videoIdFromUrl(url)} />
-              </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            {TIKTOK_VIDEOS.map((video) => (
+              <TikTokCard key={video.videoId} video={video} />
             ))}
           </div>
         </section>
+
       </div>
       <Footer />
     </div>
