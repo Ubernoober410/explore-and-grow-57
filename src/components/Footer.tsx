@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import ExternalLink from "@/components/ExternalLink";
+
 
 const InstagramIcon = () => (
   <svg
@@ -56,26 +58,23 @@ const Footer = () => {
           >
             emerginglux@gmail.com
           </a>
-          <a
+          <ExternalLink
             href="https://www.instagram.com/emerging_lux/"
-            target="_blank"
-            rel="noreferrer"
             aria-label="Emerging Lux on Instagram"
             className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
           >
             <InstagramIcon />
             <span>Instagram</span>
-          </a>
-          <a
+          </ExternalLink>
+          <ExternalLink
             href="https://www.tiktok.com/@emerging.lux"
-            target="_blank"
-            rel="noreferrer"
             aria-label="Emerging Lux on TikTok"
             className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
           >
             <TikTokIcon />
             <span>TikTok</span>
-          </a>
+          </ExternalLink>
+
         </div>
       </div>
     </footer>

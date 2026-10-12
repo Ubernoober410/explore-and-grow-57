@@ -1,4 +1,6 @@
 import type { TikTokVideo } from "@/lib/tiktokVideos";
+import ExternalLink from "@/components/ExternalLink";
+
 
 const TikTokIcon = () => (
   <svg
@@ -13,13 +15,12 @@ const TikTokIcon = () => (
 );
 
 const TikTokCard = ({ video }: { video: TikTokVideo }) => (
-  <a
+  <ExternalLink
     href={video.url}
-    target="_blank"
-    rel="noreferrer"
     aria-label={`Watch "${video.title}" on TikTok`}
     className="group block bg-card rounded-3xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
   >
+
     <div className="relative overflow-hidden rounded-[1.25rem] aspect-[3/4] bg-secondary">
       <img
         src={video.thumbnail}
@@ -39,7 +40,8 @@ const TikTokCard = ({ video }: { video: TikTokVideo }) => (
     <p className="mt-3 px-1 line-clamp-2 text-sm font-semibold text-primary leading-snug">
       {video.title}
     </p>
-  </a>
+  </ExternalLink>
 );
+
 
 export default TikTokCard;
