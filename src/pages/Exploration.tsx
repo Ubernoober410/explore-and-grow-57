@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import TikTokEmbed from "@/components/TikTokEmbed";
+
+const TIKTOK_VIDEOS = [
+  "https://www.tiktok.com/@emerging.lux/video/7694553170084777229",
+  "https://www.tiktok.com/@emerging.lux/video/7694182278523587853",
+  "https://www.tiktok.com/@emerging.lux/video/7688572832254643469",
+  "https://www.tiktok.com/@emerging.lux/video/7685997653578026254",
+  "https://www.tiktok.com/@emerging.lux/video/7681117210537987341",
+  "https://www.tiktok.com/@emerging.lux/video/7681106612588727566",
+  "https://www.tiktok.com/@emerging.lux/video/7681106178641792269",
+  "https://www.tiktok.com/@emerging.lux/video/7681105977889885453",
+  "https://www.tiktok.com/@emerging.lux/video/7681079810549927181",
+];
+
+const videoIdFromUrl = (url: string) => url.split("/video/")[1] ?? url;
 
 const Exploration = () => {
   const resources = [
