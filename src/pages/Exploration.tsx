@@ -42,6 +42,20 @@ const Exploration = () => {
             </Link>
           ))}
         </div>
+
+        <section className="mt-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">Career Exploration Videos</h2>
+          <p className="text-lg text-muted-foreground mb-10 max-w-3xl">
+            Short clips from our TikTok channel covering career paths, tips, and real-world insights.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {TIKTOK_VIDEOS.map((url) => (
+              <div key={url} className="bg-card rounded-3xl p-4 shadow-sm overflow-hidden">
+                <TikTokEmbed videoUrl={url} videoId={videoIdFromUrl(url)} />
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
       <Footer />
     </div>
